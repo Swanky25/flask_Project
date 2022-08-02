@@ -93,6 +93,7 @@ def edit(employee_id):
     return render_template('edit.html', employee=employees)
 
 
+if __name__ == '__main__':
 
-
-app.run(debug=True, port = 7777)
+    flask_app = create_app()
+    serve(flask_app, host='0.0.0.0', port=80, debug=False, url_scheme='https')
