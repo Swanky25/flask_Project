@@ -56,7 +56,7 @@ def delete(employee_id):
             if employees:
                 db.session.delete(employees)
                 db.session.commit()
-                return redirect("/')
+                return redirect('/')
             abort(404)
     return render_template('delete.html')    
 
