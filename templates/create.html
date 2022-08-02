@@ -1,0 +1,78 @@
+
+{% extends 'base.html' %}
+{% include 'sample.html' %}
+
+{% block title %} add data {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+body  {
+    background:  #cccccc;
+}
+    </style>
+    
+</head>
+
+<div class="container">
+    <form method="post" action="">
+        <h2>Employee Form</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="first_name" class="form-control" required="required"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="last_name" class="form-control" required="required"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" class="form-control" required="required"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        Male:<input type="radio" name="gender" value="Male">
+                        Female:<input type="radio" name="gender" value="Female">
+                        Other:<input type="radio" name="gender" value="Other">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>
+                        <select name="Department"class="form-control">
+                            <option value="Development">Development</option>
+                            <option value="Testing">Testing</option>
+                            <option value="Analysis">Analysis</option>
+                        </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tools</td>
+                    <td>
+                        Python:<input type="checkbox" name="tools" value="Python">
+                        C#:<input type="checkbox" name="tools" value="C#">
+                        Java:<input type="checkbox" name="tools" value="java">
+                        Selenium:<input type="checkbox" name="tools" value="Selenium">
+                        Testing Whiz:<input type="checkbox" name="tools" value="Testing Whiz">
+                        Power BI:<input type="checkbox" name="tools" value="Power BI">
+                        Tableau:<input type="checkbox" name="tools" value="Tableau">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="submit" class="btn btn-warning">
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </form>
+
+</div>
+
+{% endblock %}

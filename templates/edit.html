@@ -1,1 +1,131 @@
 
+{% extends 'base.html' %}
+{% include 'sample.html' %}
+
+{% block title %} add data {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+body  {
+    background:  #cccccc;
+}
+    </style>
+    
+</head>
+
+<div class="container">
+    <form method="post" action="">
+        <h2>Employee Form</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="first_name" class="form-control" value="{{employee.first_name}}"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="last_name" class="form-control" value="{{employee.last_name}}"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" class="form-control" value="{{employee.email }}"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        Male:<input type="radio" name="gender" value="Male"
+                        {% if employee.gender=='Male' %}
+                        checked
+                        {% endif %}
+                        />
+                        Female:<input type="radio" name="gender" value="Female"
+                        {% if employee.gender=='Female' %}
+                        checked
+                        {% endif %}
+                        />
+
+                        Other:<input type="radio" name="gender" value="Other"
+                        {% if employee.gender=='Other' %}
+                        checked
+                        {% endif %}
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>
+                        <select name="Department"class="form-control">
+                            <option value="Development"
+                            {% if 'Development' in employee.department %}
+                            selected
+                            {% endif %}
+                            >Development</option>
+                            <option value="Testing"
+                            {% if 'Testing' in employee.department %}
+                            selected
+                            {% endif %}
+                            >Testing</option>
+                            <option value="Analysis"
+                            {% if 'Analysis' in employee.department %}
+                            selected
+                            {% endif %}
+                            >Analysis</option>
+                        </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tools</td>
+                    <td>
+                        Python:<input type="checkbox" name="tools" value="Python"
+                        {% if 'Python' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                        C#:<input type="checkbox" name="tools" value="C#"
+                        {% if 'C#' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                        Java:<input type="checkbox" name="tools" value="java"
+                        {% if 'java' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                        Selenium:<input type="checkbox" name="tools" value="Selenium"
+                        {% if 'Selenium' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                        Testing Whiz:<input type="checkbox" name="tools" value="Testing Whiz"
+                        {% if 'Testing Whiz' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                        Power BI:<input type="checkbox" name="tools" value="Power BI"
+                        {% if 'Power BI' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                        Tableau:<input type="checkbox" name="tools" value="Tableau"
+                        {% if 'Tableau' in employee.tools %}
+                        checked
+                        {% endif %}
+                        >
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="submit" class="btn btn-warning">
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </form>
+
+</div>
+
+{% endblock %}

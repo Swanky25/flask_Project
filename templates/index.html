@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+{% include 'sample.html' %}
+
+{% block title %} add data {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+body  {
+    background:  #cccccc;
+}
+    </style>
+    
+</head>
+
+<div class="container">
+    <div>
+        <div class="col-md-12 text-center" ><h1>Employee List</h1> </div>
+    </div>
+    <div>
+        <table class="table">
+            <thead style ="background-color: black; color:blanchedalmond;">
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Tools</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {% for employee in employee %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ employee.first_name }}</td>
+                    <td>{{ employee.last_name }}</td>
+                    <td>{{ employee.gender }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.tools }}</td>
+                    <td>
+                    <span style="font-size: 24px; color:blue;">
+                    <a href="/{{employee.employee_id}}/edit"> <i class="fas fa-edit"></i></a></span>
+                    |
+                        <span style="font-size: 24px; color:blue;">
+                            <a href="/{{employee.employee_id}}/delete"> <i class="fas fa-trash-alt"></i></a></span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
